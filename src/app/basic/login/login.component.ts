@@ -3,6 +3,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../basic-services/auth.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { UserStorageService } from '../basic-services/user-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -26,6 +27,7 @@ export class LoginComponent {
 
   submitForm(){
     this.authService.loginUser(this.loginForm.value).subscribe(res=>{
+      UserStorageService.saveUser(res);
       console.log(res);
     }, error=>{
       this.message
