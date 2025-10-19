@@ -3,6 +3,7 @@ import { Router, RouterOutlet } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 import { UserStorageService } from './basic/basic-services/user-storage.service';
 
+
 @Component({
   selector: 'app-root',
   imports: [SharedModule],
@@ -19,12 +20,11 @@ export class AppComponent {
   constructor (private router: Router){}
 
   ngOnInit(){
-  this.router.events.subscribe(events=>{
-    this.isEmployeeLoggedIn =UserStorageService.isEmployeeLoggedIn();
-    this.isAdminLoggedIn =UserStorageService.isAdminLoggedIn();
-    this.isManagerLoggedIn = UserStorageService.isManagerLoggedIn();
-  })
-
+    this.router.events.subscribe(events=>{
+      this.isEmployeeLoggedIn =UserStorageService.isEmployeeLoggedIn();
+      this.isAdminLoggedIn =UserStorageService.isAdminLoggedIn();
+      this.isManagerLoggedIn = UserStorageService.isManagerLoggedIn();
+    })
   }
 
 }
