@@ -77,8 +77,7 @@ const antDesignIcons = Object.values(AllIcons);
         NzIconModule.forChild(antDesignIcons),
         NzNoAnimationModule,
     ],
-    exports: [
-        NzAffixModule,
+    exports: [NzAffixModule,
         NzAlertModule,
         NzAnchorModule,
         NzNoAnimationModule,
@@ -148,6 +147,6 @@ const antDesignIcons = Object.values(AllIcons);
         NzWaveModule,
         NzResizableModule,
         NzPipesModule,
-    ]
+    ],
 })
 export class NgZorroAntdModule {}

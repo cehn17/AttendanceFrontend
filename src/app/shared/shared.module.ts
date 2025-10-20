@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { NgZorroAntdModule } from '../NgZorroAntdModule';
@@ -9,20 +8,16 @@ import { NgZorroAntdModule } from '../NgZorroAntdModule';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
+  imports: [CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
     RouterLink,
     RouterOutlet,
     NgZorroAntdModule
   ],
-  exports: [
-    CommonModule,
+  exports: [CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
     RouterLink,
     RouterOutlet,
     NgZorroAntdModule
