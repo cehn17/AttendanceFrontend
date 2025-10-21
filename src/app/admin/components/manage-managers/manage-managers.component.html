@@ -35,8 +35,22 @@
                 </form>
             </nz-card>
         </div>
-        <div nz-col nzFlex="3" style="margin-left: 20px;">
 
+
+        <div nz-col nzFlex="3" style="margin-left: 20px;">
+            <nz-card nzType="inner" style="margin-top:16px;" nzTitle="All Managers">
+                <div nz-card-grid style="width: 100%;" *ngFor="let manager of managers" >
+                    <div nz-col nzSpan="30">
+                        ID: <strong>{{manager.id}}</strong>
+                        -
+                        Name: <strong>{{manager.name}}</strong>
+                        -
+                        Email: <strong> {{manager.email}}</strong>
+                        -
+                        Project: <strong> {{manager.projectName }}</strong>
+                    </div>
+                </div>
+            </nz-card>
         </div>
     </div>
 </div>

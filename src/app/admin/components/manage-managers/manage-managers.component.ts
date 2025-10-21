@@ -14,6 +14,7 @@ export class ManageManagersComponent {
 
   projects: any;
   managerForm!: FormGroup;
+  managers: any;
   
   constructor(
     private adminService: AdminService,
@@ -29,6 +30,7 @@ export class ManageManagersComponent {
       password: [null, [Validators.required]],
     })
     this.getAllProjects();
+    this.getAllManagers();
   }
 
   getAllProjects(){
@@ -47,6 +49,13 @@ export class ManageManagersComponent {
       this.managerForm.reset();
     }, error=>{
       this.message.error(error.error, { nzDuration: 5000 });
+    })
+  }
+
+  getAllManagers(){
+    this.adminService.getAllManagers().subscribe(res=>{
+      this.managers = res;
+      console.log(this.managers);
     })
   }
 
