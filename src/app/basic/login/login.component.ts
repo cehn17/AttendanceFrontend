@@ -33,6 +33,10 @@ export class LoginComponent {
 
       if (UserStorageService.isAdminLoggedIn()){
         this.router.navigateByUrl('/admin/dashboard');
+      } else if(UserStorageService.isEmployeeLoggedIn()){
+        this.router.navigateByUrl('/employee/dashboard');
+      } else if(UserStorageService.isManagerLoggedIn()){
+        this.router.navigateByUrl('/manager/dashboard');
       }
       console.log(res);
     }, error=>{
